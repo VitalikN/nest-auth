@@ -22,6 +22,5 @@ import { MongooseModule } from '@nestjs/mongoose';
   ],
   controllers: [AppController],
   providers: [AppService],
-  // imports: [MongooseModule.forRoot('mongodb://localhost/nest')],
 })
 export class AppModule {}
