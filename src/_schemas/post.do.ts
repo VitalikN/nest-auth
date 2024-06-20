@@ -1,5 +1,3 @@
-// import { Types } from 'mongoose';
-
 export class PostDo {
   title: string;
   description: string;

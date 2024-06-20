@@ -17,15 +17,20 @@ export class PostsService {
     return findAll;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} post`;
+  async findOne(id: string) {
+    const findOne = await this.postsRepository.findOne(id);
+
+    return findOne;
   }
 
-  update(id: number, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} post`;
+  async update(id: string, updatePostDto: UpdatePostDto) {
+    const updateOne = await this.postsRepository.updateOne(id, updatePostDto);
+    return updateOne;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} post`;
+  async remove(id: string) {
+    // const removeOne = await this.postsRepository.removeOne(id);
+    const removeOne = await this.postsRepository.deleteOne(id);
+    return removeOne;
   }
 }
