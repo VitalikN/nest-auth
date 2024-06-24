@@ -24,13 +24,12 @@ export class PostsService {
   }
 
   async update(id: string, updatePostDto: UpdatePostDto) {
-    const updateOne = await this.postsRepository.updateOne(id, updatePostDto);
-    return updateOne;
+    const update = await this.postsRepository.updateOne(id, updatePostDto);
+    return update;
   }
 
   async remove(id: string) {
-    // const removeOne = await this.postsRepository.removeOne(id);
-    const removeOne = await this.postsRepository.deleteOne(id);
-    return removeOne;
+    const remove = await this.postsRepository.deleteOne(id);
+    return remove;
   }
 }
